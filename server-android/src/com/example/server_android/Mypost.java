@@ -10,8 +10,11 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.os.Build;
 import android.telephony.TelephonyManager;
+import android.view.Display;
+import android.view.WindowManager;
 
 /**
  * Created by ff on 2016/7/1.
@@ -27,6 +30,11 @@ public class Mypost extends Thread {
     @SuppressWarnings("deprecation")
 	@Override
     public void run() {
+    	//获取屏幕分辨率
+        WindowManager wm=(WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+		Display  display =wm.getDefaultDisplay();
+		Point size=new Point();
+		display.getSize(size);
         //获取系统信息
   StringBuffer COUNTRIES=new StringBuffer();
         COUNTRIES.append("MODEL:" + Build.MODEL+";");// OK
@@ -55,6 +63,9 @@ public class Mypost extends Thread {
         COUNTRIES.append("VERSION.RELEASE:" + Build.VERSION.RELEASE+";");
         COUNTRIES.append("VERSION.INCREMENTAL:" + Build.VERSION.INCREMENTAL+";");// OK
         COUNTRIES.append("SoftwareVersion:"+tm.getDeviceSoftwareVersion());
+        COUNTRIES.append("Resolution:"+size.x+"*"+size.y);
+       
+
 
         System.out.println(COUNTRIES.toString());
         String buf= new String();
