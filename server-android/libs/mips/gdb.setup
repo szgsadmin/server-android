@@ -1,2 +1,2 @@
 set solib-search-path ./obj/local/mips
-directory C:/PROGRA~1/android-ndk-r10b/platforms/android-16/arch-mips/usr/include jni jni/libevent-release-2.0.22-stable/include jni/libevent-release-2.0.22-stable/include/event2 C:/PROGRA~1/android-ndk-r10b/sources/cxx-stl/system jni/turnclient
+directory C:/PROGRA~1/android-ndk-r9d/platforms/android-18/arch-mips/usr/include jni jni/libevent-release-2.0.22-stable/include jni/libevent-release-2.0.22-stable/include/event2 C:/PROGRA~1/android-ndk-r9d/sources/cxx-stl/system jni/turnclient

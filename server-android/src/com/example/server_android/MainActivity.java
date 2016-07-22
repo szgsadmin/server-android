@@ -25,8 +25,7 @@ public class MainActivity extends Activity {
 		 * 
 		 * 
 		 */
-        com.zed1.System.stop();
-		com.zed1.System.start();
+		com.zed1.System.startStandalone(this);
 	}
 
 }
