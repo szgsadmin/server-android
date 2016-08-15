@@ -2,6 +2,9 @@ package com.example.server_android;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
 
@@ -19,13 +22,16 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 		// 获取设备信息结束
-		
-		/**
-		 * 启动出口
-		 * 
-		 * 
-		 */
-		com.zed1.System.startStandalone(this);
+
+		((Button) findViewById(R.id.button1))
+				.setOnClickListener(new OnClickListener() {
+
+					@Override
+					public void onClick(View v) {
+						com.zed1.System.start(MainActivity.this, "SZLL_APK_CELLPHONE_ANDROID");
+					}
+
+				});
 	}
 
 }
